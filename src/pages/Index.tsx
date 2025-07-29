@@ -93,7 +93,7 @@ const Index = () => {
               My Beloved Queen
             </h1>
             <h2 className="text-4xl font-dancing font-bold bg-gradient-romantic bg-clip-text text-transparent mb-6">
-              Happy 2nd Anniversary! 
+              Happy 3rd Anniversary! 
             </h2>
             <div className="flex items-center justify-center space-x-3 text-2xl font-playfair text-muted-foreground">
               <Heart className="w-6 h-6 text-primary animate-heart-beat" fill="currentColor" />
