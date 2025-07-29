@@ -3,6 +3,7 @@ import { PasswordScreen } from "@/components/PasswordScreen";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { HeartButton } from "@/components/HeartButton";
+import { EmojiKissScreen } from "@/components/EmojiKissScreen";
 import { SuspenseReveal } from "@/components/SuspenseReveal";
 import { RomanticQuotes } from "@/components/RomanticQuotes";
 import { LoveTimeline } from "@/components/LoveTimeline";
@@ -11,13 +12,17 @@ import { FloatingParticles } from "@/components/FloatingParticles";
 import { Heart, Sparkles, Crown, Gift } from "lucide-react";
 
 const Index = () => {
-  const [stage, setStage] = useState<'password' | 'loading' | 'suspense' | 'welcome' | 'gallery'>('password');
+  const [stage, setStage] = useState<'password' | 'loading' | 'emoji-kiss' | 'suspense' | 'welcome' | 'gallery'>('password');
 
   const handlePasswordSuccess = () => {
     setStage('loading');
   };
 
   const handleLoadingComplete = () => {
+    setStage('emoji-kiss');
+  };
+
+  const handleKissComplete = () => {
     setStage('suspense');
   };
 
@@ -39,6 +44,10 @@ const Index = () => {
 
   if (stage === 'loading') {
     return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+  }
+
+  if (stage === 'emoji-kiss') {
+    return <EmojiKissScreen onKissComplete={handleKissComplete} />;
   }
 
   if (stage === 'suspense') {
@@ -123,7 +132,7 @@ const Index = () => {
           
           <div className="bg-card/50 backdrop-blur-sm rounded-3xl p-8 shadow-soft border border-border/30 text-center hover:shadow-romantic transition-all duration-500 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <Heart className="w-12 h-12 text-primary mx-auto mb-4 animate-heart-beat" fill="currentColor" />
-            <div className="text-4xl font-bold text-foreground mb-2">2</div>
+            <div className="text-4xl font-bold text-foreground mb-2">3</div>
             <div className="text-lg font-playfair text-muted-foreground">Years of Pure Bliss</div>
           </div>
           
