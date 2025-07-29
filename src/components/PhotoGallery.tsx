@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Heart, ArrowLeft, ArrowRight, X } from "lucide-react";
+import { Heart, ArrowLeft, ArrowRight, X, Camera, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FloatingParticles } from "./FloatingParticles";
 
 const photos = [
   {
@@ -73,7 +74,8 @@ export const PhotoGallery = ({ isVisible, onClose }: PhotoGalleryProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-soft p-4 animate-fade-in-up">
+    <div className="min-h-screen bg-gradient-soft p-4 animate-fade-in-up relative">
+      <FloatingParticles />
       {/* Header */}
       <div className="text-center mb-8 pt-8">
         <h1 className="text-4xl font-bold text-foreground mb-2 animate-romantic-glow">
